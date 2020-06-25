@@ -1,0 +1,15 @@
+Supplier ID,ID,Product Code,Product Name,Description,Standard Cost,List Price,Category
+4,1,NWTB-1,Northwind Traders Chai,,13.5,18,Beverages
+10,3,NWTCO-3,Northwind Traders Syrup,,7.5,10,Condiments
+10,4,NWTCO-4,Northwind Traders Cajun Seasoning,,16.5,22,Condiments
+10,5,NWTO-5,Northwind Traders Olive Oil,,16.01,21.35,Oil
+2,6,NWTJP-6,Northwind Traders Boysenberry Spread,,18.75,25,"Jams, Preserves"
+2,7,NWTDFN-7,Northwind Traders Dried Pears,,22.5,30,Dried Fruit & Nuts
+8,8,NWTS-8,Northwind Traders Curry Sauce,,30,40,Sauces
+2,14,NWTDFN-14,Northwind Traders Walnuts,,17.44,23.25,Dried Fruit & Nuts
+6,17,NWTCFV-17,Northwind Traders Fruit Cocktail,,29.25,39,Canned Fruit & Vegetables
+1,19,NWTBGM-19,Northwind Traders Chocolate Biscuits Mix,,6.9,9.2,Baked Goods & Mixes
+2,20,NWTJP-6,Northwind Traders Marmalade,,60.75,81,"Jams, Preserves"
+1,21,NWTBGM-21,Northwind Traders Scones,,7.5,10,Baked Goods & Mixes
+4,34,NWTB-34,Northwind Traders Beer,,10.5,14,Beverages
+7,40,NWTCM-40,Northwind Traders Crab Meat,,13.8,18.4,Canned Meat
