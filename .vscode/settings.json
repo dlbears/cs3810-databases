@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": "postgres",
+            "driver": "PostgreSQL",
+            "name": "pglocal",
+            "pgOptions": {
+                "ssl": {}
+            },
+            "port": 5432,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "postgres"
+        }
+    ]
+}

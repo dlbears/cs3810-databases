@@ -1,0 +1,11 @@
+Order ID,Employee ID,Customer ID,Order Date,Shipped Date,Shipper ID,Ship Name,Ship Address,Ship City,Ship State/Province,Ship ZIP/Postal Code,Status ID
+44,1,1,3/24/2006,,,Anna Bedecs,123 1st Street,Seattle,WA,99999,0
+36,4,3,2/23/2006,2/25/2006,2,Thomas Axen,123 3rd Street,Los Angelas,CA,99999,3
+31,3,4,1/20/2006,1/22/2006,1,Christina Lee,123 4th Street,New York,NY,99999,3
+37,8,6,3/6/2006,3/9/2006,2,Francisco P˜rez-Olaeta,123 6th Street,Milwaukee,WI,99999,3
+41,1,7,3/24/2006,,,Ming-Yang Xie,123 7th Street,Boise,ID,99999,0
+33,6,8,1/30/2006,1/31/2006,3,Elizabeth Andersen,123 8th Street,Portland,OR,99999,3
+46,7,9,4/5/2006,4/5/2006,1,Sven Mortensen,123 9th Street,Salt Lake City,UT,99999,3
+40,4,10,3/24/2006,3/24/2006,2,Roland Wacker,123 10th Street,Chicago,IL,99999,3
+43,1,11,3/24/2006,,3,Peter Krschne,123 11th Street,Miami,FL,99999,0
+32,4,12,1/22/2006,1/22/2006,2,John Edwards,123 12th Street,Las Vegas,NV,99999,3

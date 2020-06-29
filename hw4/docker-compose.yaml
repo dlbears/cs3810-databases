@@ -3,6 +3,8 @@ services:
   db:
     image: postgres:latest
     restart: always
+    ports:
+      - 5432:5432
     volumes: 
       - './data:/home/imports'
       - './hw4.sql:/docker-entrypoint-initdb.d/hw4.sql'
