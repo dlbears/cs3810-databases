@@ -4,7 +4,7 @@ CREATE TABLE Customer (
     LastName TEXT NOT NULL,
     FirstName TEXT NOT NULL,
     Email TEXT NULL,
-    JobTitle TEXT NOT NULL,
+    JobTitle TEXT NULL,
     BusinessPhone TEXT NOT NULL
 );
 
@@ -94,33 +94,51 @@ COPY PurchaseOrderDetails (
 )
 FROM '/home/imports/Purchase Order Details short.csv' DELIMITER ',' CSV HEADER;
 
-SELECT lastname, orderid, statusid
-FROM customer 
-INNER JOIN orders 
-ON customerid = id;
+CREATE FUNCTION reject_duplicates() 
+RETURNS trigger AS $func$
+BEGIN
+    IF (SELECT TRUE FROM Customer AS c WHERE c.ID = NEW.ID) 
+    THEN RETURN NULL; /*RAISE EXCEPTION 'Duplicate Customer IDs';*/
+    END IF;
+    RETURN NEW;
+END; 
+$func$ LANGUAGE plpgsql;
 
-SELECT lastname, orderid, statusid
-FROM customer 
-NATURAL JOIN orders
-WHERE customerid = id;
+CREATE TRIGGER check_customer_dups BEFORE INSERT ON Customer
+FOR EACH ROW EXECUTE PROCEDURE reject_duplicates();
 
-SELECT lastname, orderid, statusid
-FROM customer
-FULL OUTER JOIN orders
-ON id = customerid;
+SELECT tgname FROM pg_trigger;
 
-SELECT productid, unitcost, productname
-FROM products AS p
-INNER JOIN purchaseorderdetails 
-ON productid = p.id;
+SELECT * FROM Customer;
 
-SELECT productcode, inventoryid
-FROM products AS p
-INNER JOIN purchaseorderdetails 
-ON productid = p.id;
+INSERT INTO Customer(
+    ID,
+    Company,
+    LastName,
+    FirstName,
+    BusinessPhone
+) VALUES (
+    14,
+    'Company O',
+    'Sanchez',
+    'Rick',
+    '(555) 555-5555'
+);
 
-SELECT productcode, inventoryid
-FROM products AS p
-LEFT JOIN purchaseorderdetails AS o
-ON o.productid = p.id
-WHERE o.id IS NULL;
+SELECT * FROM Customer;
+
+INSERT INTO Customer(
+    ID,
+    Company,
+    LastName,
+    FirstName,
+    BusinessPhone
+) VALUES (
+    15,
+    'Company O',
+    'Smith',
+    'Morty',
+    '(123) 123-1234'
+);
+
+SELECT * FROM Customer;

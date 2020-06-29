@@ -1,10 +1,14 @@
 version: '3.3'
+
 services:
+  
   db:
     image: postgres:latest
+    container_name: localpg 
     restart: always
     volumes: 
       - './data:/home/imports'
-      - './hw4.sql:/docker-entrypoint-initdb.d/hw4.sql'
+      - './init.sql:/docker-entrypoint-initdb.d/init.sql'
     environment:
       POSTGRES_PASSWORD: example
+
